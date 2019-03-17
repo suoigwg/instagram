@@ -1,0 +1,83 @@
+.user-profile-wrapper{
+  padding: 60px 20px 20px 0;
+  width: calc(100% - 40px);
+  margin: 0 auto 30px;
+  max-width: 935px;
+}
+.user-header{
+  display: flex;
+  flex-direction: row;
+  vertical-align: baseline;
+}
+
+.user-img-wrapper{
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-image: url('https://scontent-hkg3-1.cdninstagram.com/vp/45ea63abafd4ec8a5e5ac25c6bcf6cae/5D1F9899/t51.2885-19/s320x320/53725741_2240872962846483_3598845366100819968_n.jpg?_nc_ht=scontent-hkg3-1.cdninstagram.com');
+  background-size: contain;
+  & img{
+    width: 150px;
+    height: 150px;
+  }
+
+}
+.user-info{
+  display: flex;
+  flex-direction: column;
+  flex: 2 1 30px;
+}
+.user-connection{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+  & li{
+    margin-right: 40px;
+  }
+}
+
+.user-toggle-wrapper{
+  color: #999;
+  margin-top: 44px;
+  display: flex;
+  border-top: 1px solid #efefef;
+  flex-direction: row;
+  font-size: 12px;
+  font-weight: 600;
+  justify-content: center;
+  & a {
+    display: flex;
+    color: #262626;
+    align-items: center;
+    margin-right: 60px;
+
+  }
+  line-height: 53px;
+}
+
+.gallery{
+  display: flex;
+  flex-direction: column;
+  & .gallery-row{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 28px;
+    & .gallery-pic{
+      display: block;
+      margin-right: 28px;
+      flex: 1 0 0%;
+      &:last-of-type{
+        margin-right: 0;
+      }
+      & img{
+        //object-fit: cover;
+        max-width: 100%;
+      }
+    }
+
+  }
+}
+
