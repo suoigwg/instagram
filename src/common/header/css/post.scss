@@ -1,0 +1,147 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('iconfont.eot');
+  src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+  url('iconfont.woff2') format('woff2'),
+  url('iconfont.woff') format('woff'),
+  url('iconfont.ttf') format('truetype'),
+  url('iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 28px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper{
+  max-width: 614px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 28px;
+  border-radius: 3px;
+  border: 1px solid #e6e6e6;;
+}
+
+.user-pic-wrapper{
+  width: 30px;
+  height: 30px;
+  display: block;
+  border-radius: 50%;
+  & img{
+    height: 100%;
+    width: 100%;
+  }
+}
+
+
+
+.post-header{
+  background-color: white;
+  height: 60px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  & *{
+    font-size: 14px;
+  }
+  & .post-user-info{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    align-items: flex-start;
+    text-align: left;
+    & div:first-of-type{
+      display: flex;
+    }
+    & .post-user-desc{
+      font-size: 12px;
+      line-height: 15px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+}
+
+
+.post-img{
+  & a{
+    display: block;
+    align:left;
+
+  }
+  & a img{
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.post-button{
+  margin-top: 4px;
+  & .iconfont{
+    margin-left: 10px;
+    float: left;
+  }
+  & .iconfont:first-of-type{
+    margin-left: 0;
+  }
+  & .iconfont:last-of-type{
+    float: right;
+  }
+
+}
+.post-wrapper{
+  display: flex;
+}
+
+.post-info{
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-date{
+  & time{
+    font-size: 10px;
+    letter-spacing: .2px;
+    line-height: 18px;
+    color: #999;
+  }
+  margin-bottom: 4px;
+  display: flex;
+}
+
+.comment-list{
+  & ul{
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+
+  }
+
+  display: flex;
+}
+
+.post-comment{
+  border-top: 1px solid #efefef;
+  color: #999;
+  & textarea{
+    width: 100%;
+    border: 0;
+    color: #262626;
+    background-color: #fafafa;
+    outline: 0;
+    padding: 0;
+    resize: none;
+    line-height: 18px;
+  }
+}
+
+.post-likes{
+  clear: both;
+  margin-bottom: 8px;
+  display: flex;
+}

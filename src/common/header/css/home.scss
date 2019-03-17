@@ -1,0 +1,17 @@
+.home-content{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  padding-top: 60px;
+  max-width: 935px;
+  & .right{
+    max-width: 293px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+  }
+}
+
+body{
+  background-color: #fafafa;
+}
