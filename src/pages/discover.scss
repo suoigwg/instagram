@@ -1,0 +1,15 @@
+.discover-wrapper{
+  padding: 60px 20px 20px 0;
+  width: calc(100% - 40px);
+  margin: 0 auto 30px;
+  max-width: 935px;
+  & #discover{
+    color: #999;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    margin-bottom: 16px;
+    text-align: left;
+    text-transform: capitalize;
+  }
+}

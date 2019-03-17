@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './profile.scss'
+import Gallery from '../common/header/js/gallery'
 function Profile(props) {
     return(
         <div className={'user-profile-wrapper'}>
@@ -22,30 +23,7 @@ function Profile(props) {
                 <a>帖子</a>
                 <a>IGTV</a>
             </div>
-            <div className={'gallery'}>
-                <div className={'gallery-row'}>
-                    <div className={'gallery-pic'}>
-                        <img sizes="267px" src={'http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png'}/>
-                    </div>
-                    <div className={'gallery-pic'}>
-                        <img sizes="267px" src={'http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png'}/>
-                    </div>
-                    <div className={'gallery-pic'}>
-                        <img sizes="267px" src={'http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png'}/>
-                    </div>
-                </div>
-                <div className={'gallery-row'}>
-                    <div className={'gallery-pic'}>
-                        <img sizes="267px" src={'http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png'}/>
-                    </div>
-                    <div className={'gallery-pic'}>
-                        <img sizes="267px" src={'http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png'}/>
-                    </div>
-                    <div className={'gallery-pic'}>
-                        <img sizes="267px" src={'http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png'}/>
-                    </div>
-                </div>
-            </div>
+            <Gallery/>
         </div>
     )
 }

@@ -57,27 +57,3 @@
   }
   line-height: 53px;
 }
-
-.gallery{
-  display: flex;
-  flex-direction: column;
-  & .gallery-row{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 28px;
-    & .gallery-pic{
-      display: block;
-      margin-right: 28px;
-      flex: 1 0 0%;
-      &:last-of-type{
-        margin-right: 0;
-      }
-      & img{
-        //object-fit: cover;
-        max-width: 100%;
-      }
-    }
-
-  }
-}
-

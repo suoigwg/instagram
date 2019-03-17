@@ -83,6 +83,17 @@
   display: flex;
   flex: 1 0 0%;
   justify-content: flex-end;
+  flex-direction: row;
+  & .header-notification{
+    width: 500px;
+    height: 240px;
+    min-height: 100px;
+    margin-left: -227px;
+    position: absolute;
+    top: 78px;
+    background-color: white;
+    text-align: center;
+  }
 }
 
 
