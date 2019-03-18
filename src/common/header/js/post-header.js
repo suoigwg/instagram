@@ -11,7 +11,7 @@ class PostHeader extends Component{
                     </div>
                     <div className={'post-user-info'}>
                         <div>
-                            <h2>instagram</h2>
+                            <strong>instagram</strong>
                         </div>
                         <div >
                             <a className={'post-user-desc'}>W A V E 波 - Asian Bistro & Sushi</a>
