@@ -12,7 +12,7 @@ class PostInfo extends Component{
                     <span className={'iconfont'}>&#xe605;</span>
                     <span className={'iconfont'} style={{float: 'right'}}>&#xe60e;</span>
                 </section>
-                <section className={'post-likes'}><a><span>1112321</span>次赞</a></section>
+                <section className={'post-likes'}><a><strong>1112321</strong>次赞</a></section>
                 <div className={'comment-list'}>
                     <ul>
                         <li><strong>用户名</strong> 评论内容</li>

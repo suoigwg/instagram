@@ -10,13 +10,16 @@ function Profile(props) {
                     </div>
                 </div>
                 <section className={'user-info'}>
-                    <div><h1>ysyang</h1></div>
+                    <div><p style={{fontSize:'28px'}}>instagram</p></div>
                     <ul className={'user-connection'}>
-                        <li>1帖子</li>
-                        <li>1粉丝</li>
-                        <li>正在关注2</li>
+                        <li>1 帖子</li>
+                        <li>1 粉丝</li>
+                        <li>正在关注 2</li>
                     </ul>
-                    <div>描述文字</div>
+                    <div>Instagram
+                        Bringing you closer to the people and things you love. ❤️
+                        help.instagram.com
+                    </div>
                 </section>
             </header>
             <div className={'user-toggle-wrapper'}>
