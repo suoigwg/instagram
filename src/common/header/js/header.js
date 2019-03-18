@@ -14,7 +14,9 @@ class Header extends Component{
     renderNotification(){
         return (
             <div className={'header-notification'}>
-                获得点赞或评论的帖子会显示在这里。
+                <div style={{marginTop:'20px'}}><span className={'iconfont'}>&#xe71b;</span></div>
+                <p>帖子动态</p>
+                <p>获得点赞或评论的帖子会显示在这里。</p>
             </div>
         )
     }

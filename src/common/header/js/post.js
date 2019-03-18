@@ -23,10 +23,11 @@ class Post extends Component{
                     </div>
                     <div className={'post-info'}>
                         <section className={'post-button'}>
-                            <span className={'iconfont'}>&#xe64b;</span>
-                            <span className={'iconfont'}>&#xe841;</span>
+                            <span className={'iconfont'} style={{marginLeft:'0'}}>&#xe64b;</span>
+                            <label for="comment-input"><span className={'iconfont'}>&#xe841;</span></label>
+
                             <span className={'iconfont'}>&#xe605;</span>
-                            <span className={'iconfont'}>&#xe60e;</span>
+                            <span className={'iconfont'} style={{float:'right'}}>&#xe60e;</span>
                         </section>
                         <section className={'post-likes'}><a><span>1112321</span>次赞</a></section>
                         <div className={'comment-list'}>
@@ -42,7 +43,7 @@ class Post extends Component{
                         </div>
                         <section className={'post-comment'}>
                             <form>
-                                <textarea placeholder="添加评论..."></textarea>
+                                <textarea id={'comment-input'} placeholder="添加评论..."></textarea>
                             </form>
                         </section>
                     </div>
