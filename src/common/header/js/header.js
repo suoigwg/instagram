@@ -35,9 +35,9 @@ class Header extends Component{
                         </Link>
                     </div>
                     <div className={'header-search'}>
-                        <span className={'iconfont'}>&#xe60b;</span>
+                        <span id={'header-search'} className={'iconfont'}>&#xe60b;</span>
                         <input className={'searchInput'} placeholder={'搜索'}></input>
-                        <span className={'iconfont'}>&#xe6df;</span>
+                        <span id={'header-clear'} className={'iconfont'}>&#xe6df;</span>
                     </div>
                     <div className={'header-icon-wrapper'}>
                         <Link to={'/discover'} style={{textDecoration:'none'}}>

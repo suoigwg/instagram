@@ -31,6 +31,19 @@
   border: 0 solid #000;
   display: flex;
   vertical-align: middle;
+  position: relative;
+  & #header-search{
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    z-index: 3;
+  }
+  & #header-clear{
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    z-index: 3;
+  }
   & .iconfont{
     font-size: 10px;
   }

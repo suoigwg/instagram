@@ -1,0 +1,32 @@
+.picture-window{
+  background-color: rgba(0,0,0,.5);
+  position: fixed;
+  top: 0;
+  z-index: 4;
+  & #close-picture-window{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+}
+.picture-wrapper{
+
+  display: flex;
+  flex-direction: row;
+  padding: 60px;
+  margin: 0 auto;
+  & #picture{
+    display: flex;
+    flex: 2;
+    & img{
+      width: 100%;
+    }
+  }
+
+  & #info{
+    background-color: white;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+}
