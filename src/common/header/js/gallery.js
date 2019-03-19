@@ -45,13 +45,12 @@ class Gallery extends Component{
 
     zoomIn(event){
         this.props.updateImage(event.target.src);
-        console.log(event.target.src);
     }
 }
 
 const mapStateToProps = (state /*, ownProps*/) => {
     return {
-        zoomImage: state.zoomImage,
+        zoomImage: state.get('zoomImage'),
     }
 };
 

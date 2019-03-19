@@ -13,18 +13,18 @@ class Post extends Component{
 
     render() {
         const {timeline} = this.props;
-        console.log(timeline);
+        const timelineArray = [...timeline.values()]
         return (
                 <article className={'wrapper'}>
                     {
-                        timeline.map((item, idx)=>{
+                        timelineArray.map((item, idx)=>{
                             return(
                                 <div>
                                     <PostHeader username={item.author} location={item.location} icon={item.authorIcon}/>
                                     <div post-id={item.id} className={'post-img'}>
                                         <a><img src={item.imgUrl}/></a>
                                     </div>
-                                    <PostInfo likes={item.likes} date={item.date} bookmarked={item.bookmarked} comments={item.comments}/>
+                                    <PostInfo id={item.id} likes={item.likes} date={item.date} bookmarked={item.bookmarked} comments={item.comments}/>
                                 </div>
                             )
                         })
@@ -40,7 +40,7 @@ class Post extends Component{
 
 const mapStateToProps = (state /*, ownProps*/) => {
     return {
-        timeline: state.timeline
+        timeline: state.get('timeline')
     }
 };
 

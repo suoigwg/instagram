@@ -41,8 +41,8 @@ class Picture extends Component{
 
 const mapStateToProps = (state /*, ownProps*/) => {
     return {
-        zoomImage: state.zoomImage,
-        visible: state.showImage
+        zoomImage: state.get('zoomImage'),
+        visible: state.get('showImage'),
     }
 };
 
