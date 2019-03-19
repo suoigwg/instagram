@@ -9,39 +9,49 @@ class Gallery extends Component{
         super(props);
         this.zoomIn = this.zoomIn.bind(this);
     }
+    
+    renderGallery(){
+        const {gallery} = this.props;
+        let idx = 1;
+        let div = [];
+        let row = [];
+        gallery.forEach((value, key)=>{
+            row.push(
+                <div className={'gallery-pic'} onClick={(event)=>{this.zoomIn(event)}}>
+                    <img src={value.imgUrl} />
+                </div>);
+            if(idx % 3 === 0){
+                div.push(row);
+                row = [];
+            }
+            idx++;
+        });
+        if (((idx-1) % 3) !== 0) {
+            while ((((idx-1) % 3) !== 0)){
+                row.push(<div className={'gallery-pic'} onClick={(event)=>{this.zoomIn(event)}}>
+                </div>);
+                idx++;
+            }
+            div.push(row);
+        }
+
+        return div.map(item=>{
+            return <div className={'gallery-row'}>{item}</div>
+        });
+    }
 
     render() {
         return (
             <div className={'gallery'}>
-                <div className={'gallery-row'}>
-                    <div className={'gallery-pic'} onClick={(event)=>{this.zoomIn(event)}}>
-                        <img  src={'http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png'}/>
-                    </div>
-                    <div className={'gallery-pic'} onClick={(event)=>{this.zoomIn(event)}}>
-                        <img src={'http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png'}/>
-                    </div>
-                    <div className={'gallery-pic'} onClick={(event)=>{this.zoomIn(event)}}>
-                        <img src={'http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png'}/>
-                    </div>
-                </div>
-
-                <div className={'gallery-row'}>
-                    <div className={'gallery-pic'} onClick={(event)=>{this.zoomIn(event)}}>
-                        <img  src={'http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png'}/>
-                    </div>
-                    <div className={'gallery-pic'} onClick={(event)=>{this.zoomIn(event)}}>
-                        <img src={'http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png'}/>
-                    </div>
-                    <div className={'gallery-pic'} onClick={(event)=>{this.zoomIn(event)}}>
-                        <img src={'http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071010.png'}/>
-                    </div>
-                </div>
-
+                {this.renderGallery()}
             </div>
         );
     }
 
-
+    componentDidMount() {
+        const api = this.props.api?this.props.api:'discover';
+        this.props.fetchGallery(api);
+    }
 
     zoomIn(event){
         this.props.updateImage(event.target.src);
@@ -51,6 +61,7 @@ class Gallery extends Component{
 const mapStateToProps = (state /*, ownProps*/) => {
     return {
         zoomImage: state.get('zoomImage'),
+        gallery: state.get('gallery')
     }
 };
 
@@ -58,6 +69,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         updateImage(imgUrl){
             dispatch(actionCreators.updateZoomImage(imgUrl));
+        },
+        fetchGallery(api){
+            dispatch(actionCreators.fetchGallery(api));
         }
     }
 };

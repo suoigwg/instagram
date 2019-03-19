@@ -13,7 +13,9 @@
         margin-right: 0;
       }
       & img{
-        //object-fit: cover;
+        object-fit: cover;
+        width: 293px;
+        height: 293px;
         max-width: 100%;
       }
     }

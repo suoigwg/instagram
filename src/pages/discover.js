@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './discover.scss'
 import Gallery from '../common/header/js/gallery'
 import UserList from '../common/header/js/suggested-users';
+import {connect} from "react-redux";
 
 class Discover extends Component{
 
@@ -13,7 +14,7 @@ class Discover extends Component{
                     <span className={'blue-text'} style={{float:'right'}}>查看全部</span>
                 </div>
                 <UserList/>
-                <div><span className={'gray-text'}>探索</span></div>
+                <div style={{marginBottom:'18px'}}><span className={'gray-text'} >探索</span></div>
                 <Gallery/>
             </div>
         );
@@ -21,4 +22,16 @@ class Discover extends Component{
 
 }
 
-export default Discover;
+
+const mapStateToProps = (state /*, ownProps*/) => {
+    return {
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+
+    }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Discover);

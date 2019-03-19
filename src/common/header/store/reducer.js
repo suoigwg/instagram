@@ -3,7 +3,8 @@ import * as immutable from 'immutable';
 const defaultState = immutable.fromJS({
     zoomImage: '',
     showImage: false,
-    timeline: new Map()
+    timeline: new Map(),
+    gallery: new Map()
 });
 
 export default (state = defaultState, action) => {
@@ -27,9 +28,17 @@ export default (state = defaultState, action) => {
             action.timeline.forEach(item=>{
                 timeline = timeline.set(item.id, item);
             });
-            console.log(timeline);
             return state.set(
                 'timeline', timeline
+            );
+
+        case constants.FETCH_GALLERY:
+            let gallery = immutable.Map();
+            action.gallery.forEach(item=>{
+                gallery = gallery.set(item.id, item);
+            });
+            return state.set(
+                'gallery', gallery
             );
         case constants.TOGGLE_LIKE:
             let liked = state.getIn(['timeline', action.idx, 'liked']);

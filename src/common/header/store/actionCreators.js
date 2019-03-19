@@ -34,11 +34,28 @@ const setTimeline = timeline =>{
     }
 };
 
+const setGallery = gallery =>{
+    return{
+        type:constants.FETCH_GALLERY,
+        gallery
+    }
+};
+
 export const fetchTimeline = ()=>{
     return (dispatch, getState)=>{
         axios.get("/api/timeline.json").then((resp)=>{
                 let timeline = resp.data.data;
                 dispatch(setTimeline(timeline));
+            }
+        )
+    }
+};
+
+export const fetchGallery = (endpoint)=>{
+    return (dispatch, getState)=>{
+        axios.get('/api/'+endpoint+'.json').then((resp)=>{
+                let gallery = resp.data.data;
+                dispatch(setGallery(gallery));
             }
         )
     }
