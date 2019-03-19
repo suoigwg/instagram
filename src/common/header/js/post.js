@@ -33,9 +33,7 @@ class Post extends Component{
                 </article>
         )
     }
-    componentDidMount() {
-        this.props.fetchTimeline();
-    }
+
 }
 
 const mapStateToProps = (state /*, ownProps*/) => {
@@ -46,9 +44,7 @@ const mapStateToProps = (state /*, ownProps*/) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchTimeline(){
-            dispatch(actionCreators.fetchTimeline())
-        }
+
     }
 };
 

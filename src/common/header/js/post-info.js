@@ -4,10 +4,9 @@ import {connect} from "react-redux";
 
 class PostInfo extends Component{
 
-
-
     render() {
-        const {id} = this.props;
+        let {id} = this.props;
+        id = id?id:1;
         const {likes, comments, bookmarked,date, liked} = this.props.timeline.get(id);
         return (
             <div className={'post-info'}>

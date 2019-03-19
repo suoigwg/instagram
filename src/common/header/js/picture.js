@@ -37,12 +37,17 @@ class Picture extends Component{
     closeWindow(){
         this.props.hideImage();
     }
+
+    componentDidMount() {
+        this.props.fetchTimeline();
+    }
 }
 
 const mapStateToProps = (state /*, ownProps*/) => {
     return {
         zoomImage: state.get('zoomImage'),
         visible: state.get('showImage'),
+        timeline: state.get('timeline'),
     }
 };
 
@@ -50,6 +55,9 @@ const mapDispatchToProps = (dispatch) => {
     return {
         hideImage(){
             dispatch(actionCreators.hideImage());
+        },
+        fetchTimeline(){
+            dispatch(actionCreators.fetchTimeline())
         }
     }
 };
