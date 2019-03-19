@@ -21,8 +21,7 @@
   & .recommend-user{
     padding: 8px 16px;
     clear: both;
-    display: flex;
-    flex-direction: row;
+
   }
   & .pic-wrapper{
     display: block;
@@ -53,9 +52,21 @@
   }
 
   & .follow{
+    display: flex;
     flex: 0 0 auto;
     color: #3897f0;
     font-size: 12px;
     font-weight: 600;
   }
+
+  & .rec-user-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    & div {
+      display: flex;
+    }
+  }
 }
+

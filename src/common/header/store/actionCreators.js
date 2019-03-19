@@ -76,4 +76,17 @@ export const addComment = (id, comment) => {
         id,
         comment,
     }
-}
+};
+
+export const loadUser = () => {
+    return (dispatch, getState) => {
+        axios.get('/api/users.json').then((resp) => {
+                let data = resp.data.data;
+                dispatch({
+                    type: constants.LOAD_USERS,
+                    data,
+                });
+            }
+        )
+    }
+};

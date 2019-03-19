@@ -6,3 +6,4 @@ export const TOGGLE_BOOKMARK = 'TOGGLE_BOOKMARK';
 export const FETCH_GALLERY = 'FETCH_GALLERY';
 export const SET_CURRENT_IMG = 'SET_CURRENT_IMG';
 export const ADD_COMMENT = 'ADD_COMMENT';
+export const LOAD_USERS = 'LOAD_USERS';

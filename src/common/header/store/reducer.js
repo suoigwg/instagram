@@ -8,6 +8,7 @@ const defaultState = immutable.fromJS({
     gallery: new Map(),
     currentDisplay: -1,
     picID: [],
+    users: [],
     username: 'instagram'
 });
 
@@ -65,7 +66,6 @@ export default (state = defaultState, action) => {
             );
         case constants.ADD_COMMENT:
             let newComments = [...state.getIn(['timeline', action.id, 'comments'])];
-
             newComments.push(
                 {
                     author: state.get('username'),
@@ -74,6 +74,8 @@ export default (state = defaultState, action) => {
             );
             return state.setIn(['timeline', action.id, 'comments'],
                 newComments);
+        case constants.LOAD_USERS:
+            return state.set('users', action.data);
         default:
             return state;
     }
