@@ -10,6 +10,20 @@
     top: 5px;
     right: 5px;
   }
+
+  & #next {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+
+  }
+
+  & #last {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+
+  }
 }
 .picture-wrapper{
 

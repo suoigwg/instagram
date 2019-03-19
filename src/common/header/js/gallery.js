@@ -18,7 +18,7 @@ class Gallery extends Component{
         gallery.forEach((value, key)=>{
             row.push(
                 <div className={'gallery-pic'} onClick={(event)=>{this.zoomIn(event)}}>
-                    <img src={value.imgUrl} />
+                    <img imgID={idx - 1} src={value.imgUrl}/>
                 </div>);
             if(idx % 3 === 0){
                 div.push(row);
@@ -54,7 +54,7 @@ class Gallery extends Component{
     }
 
     zoomIn(event){
-        this.props.updateImage(event.target.src);
+        this.props.updateImage(parseInt(event.target.getAttribute('imgid'), 10));
     }
 }
 
@@ -67,8 +67,8 @@ const mapStateToProps = (state /*, ownProps*/) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        updateImage(imgUrl){
-            dispatch(actionCreators.updateZoomImage(imgUrl));
+        updateImage(imgID) {
+            dispatch(actionCreators.updateZoomImage(imgID));
         },
         fetchGallery(api){
             dispatch(actionCreators.fetchGallery(api));

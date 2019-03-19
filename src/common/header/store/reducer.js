@@ -4,7 +4,9 @@ const defaultState = immutable.fromJS({
     zoomImage: '',
     showImage: false,
     timeline: new Map(),
-    gallery: new Map()
+    gallery: new Map(),
+    currentDisplay: -1,
+    picID: []
 });
 
 export default (state = defaultState, action) => {
@@ -12,6 +14,7 @@ export default (state = defaultState, action) => {
         case constants.ZOOM_IMAGE_ACTION:
             return state.merge(
                 {
+                    currentDisplay: action.imgID,
                     zoomImage: action.img,
                     showImage:true,
                 }
@@ -25,11 +28,15 @@ export default (state = defaultState, action) => {
             );
         case constants.FETCH_TIMELINE:
             let timeline = immutable.Map();
+            let picID = immutable.List()
             action.timeline.forEach(item=>{
                 timeline = timeline.set(item.id, item);
+                picID = picID.push(item.id)
             });
             return state.set(
                 'timeline', timeline
+            ).set(
+                'picID', picID
             );
 
         case constants.FETCH_GALLERY:
@@ -50,7 +57,10 @@ export default (state = defaultState, action) => {
             return state.update(
                 'timeline', value=>value.setIn([action.idx, 'bookmarked'], !bookmarked)
             );
-
+        case constants.SET_CURRENT_IMG:
+            return state.set(
+                'currentDisplay', action.idx
+            );
         default:
             return state;
     }

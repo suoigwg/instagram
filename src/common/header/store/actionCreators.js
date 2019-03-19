@@ -1,9 +1,10 @@
 import * as constants from './constants'
 import axios from 'axios';
-export const updateZoomImage = (img)=>{
+
+export const updateZoomImage = (imgID) => {
     return {
         type:constants.ZOOM_IMAGE_ACTION,
-        img,
+        imgID,
     }
 };
 
@@ -41,6 +42,13 @@ const setGallery = gallery =>{
     }
 };
 
+export const setCurrentPic = (idx) => {
+    return {
+        type: constants.SET_CURRENT_IMG,
+        idx
+    }
+};
+
 export const fetchTimeline = ()=>{
     return (dispatch, getState)=>{
         axios.get("/api/timeline.json").then((resp)=>{
@@ -55,6 +63,7 @@ export const fetchGallery = (endpoint)=>{
     return (dispatch, getState)=>{
         axios.get('/api/'+endpoint+'.json').then((resp)=>{
                 let gallery = resp.data.data;
+            console.log('gallery api', gallery);
                 dispatch(setGallery(gallery));
             }
         )

@@ -4,3 +4,4 @@ export const FETCH_TIMELINE = 'FETCH_TIMELINE';
 export const TOGGLE_LIKE = 'TOGGLE_LIKE';
 export const TOGGLE_BOOKMARK = 'TOGGLE_BOOKMARK';
 export const FETCH_GALLERY = 'FETCH_GALLERY';
+export const SET_CURRENT_IMG = 'SET_CURRENT_IMG';
