@@ -22,7 +22,7 @@ class Post extends Component{
                                 <div>
                                     <PostHeader username={item.author} location={item.location} icon={item.authorIcon}/>
                                     <div post-id={item.id} className={'post-img'}>
-                                        <a><img src={'https://scontent-hkg3-1.cdninstagram.com/vp/d14a768dcc987cf833e359dbc301665d/5D094692/t51.2885-15/e35/53343735_361727848005434_4374964319129216193_n.jpg?_nc_ht=scontent-hkg3-1.cdninstagram.com'}/></a>
+                                        <a><img src={item.imgUrl}/></a>
                                     </div>
                                     <PostInfo likes={item.likes} date={item.date} bookmarked={item.bookmarked} comments={item.comments}/>
                                 </div>
@@ -33,7 +33,7 @@ class Post extends Component{
                 </article>
         )
     }
-    componentWillMount() {
+    componentDidMount() {
         this.props.fetchTimeline();
     }
 }
