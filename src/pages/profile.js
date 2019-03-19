@@ -10,7 +10,9 @@ function Profile(props) {
                     </div>
                 </div>
                 <section className={'user-info'}>
-                    <div><p style={{fontSize:'28px'}}>instagram</p></div>
+                    <div>
+                        <p style={{fontSize:'28px'}}>instagram</p>
+                    </div>
                     <ul className={'user-connection'}>
                         <li>1 帖子</li>
                         <li>1 粉丝</li>

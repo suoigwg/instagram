@@ -7,14 +7,14 @@ class PostHeader extends Component{
             <div>
                 <header className={'post-header'}>
                     <div>
-                        <a className={'user-pic-wrapper'}><img src={'https://scontent-hkg3-1.cdninstagram.com/vp/6ba6b51497cc29003dc9dd3145c9a184/5D29E55B/t51.2885-19/s150x150/14719833_310540259320655_1605122788543168512_a.jpg?_nc_ht=scontent-hkg3-1.cdninstagram.com'}/></a>
+                        <a className={'user-pic-wrapper'}><img src={this.props.icon}/></a>
                     </div>
                     <div className={'post-user-info'}>
                         <div>
-                            <strong>instagram</strong>
+                            <strong>{this.props.username}</strong>
                         </div>
                         <div >
-                            <a className={'post-user-desc'}>W A V E 波 - Asian Bistro & Sushi</a>
+                            <a className={'post-user-desc'}>{this.props.location}</a>
                         </div>
                     </div>
                 </header>
