@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../css/user-profile.scss'
+import * as actionCreators from "../store/actionCreators";
+import {connect} from "react-redux";
 class UserProfile extends Component{
 
     render() {
@@ -11,9 +13,9 @@ class UserProfile extends Component{
                     </div>
                     <div className={'user-text'}>
                         <div>
-                            <div className={'id'}><a>yysethan</a></div>
+                            <div className={'id'}><a>{this.props.username}</a></div>
                         </div>
-                        <div className={'nickname'}>ethanyang</div>
+                        <div className={'nickname'}>ig</div>
                     </div>
                 </div>
             </div>
@@ -22,4 +24,16 @@ class UserProfile extends Component{
 
 }
 
-export default UserProfile;
+const mapStateToProps = (state /*, ownProps*/) => {
+    return {
+        username: state.get('username')
+    }
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {}
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);
+
+

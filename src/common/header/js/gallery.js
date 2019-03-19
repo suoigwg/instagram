@@ -28,7 +28,7 @@ class Gallery extends Component{
         });
         if (((idx-1) % 3) !== 0) {
             while ((((idx-1) % 3) !== 0)){
-                row.push(<div className={'gallery-pic'} onClick={(event)=>{this.zoomIn(event)}}>
+                row.push(<div className={'gallery-pic'}>
                 </div>);
                 idx++;
             }
