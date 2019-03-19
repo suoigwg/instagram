@@ -3,6 +3,12 @@ import * as actionCreators from "../store/actionCreators";
 import {connect} from "react-redux";
 
 class PostInfo extends Component{
+    constructor(props) {
+        super(props);
+        this.addComment = this.addComment.bind(this);
+
+    }
+
 
     render() {
         let {id} = this.props;
@@ -28,7 +34,7 @@ class PostInfo extends Component{
                         {
                             comments.map((item, idx)=>{
                                 return (
-                                    <li><strong>{item.author}</strong> {item.comment}</li>
+                                    <li key={idx}><strong>{item.author}</strong> {item.comment}</li>
                                 )
                             })
                         }
@@ -39,7 +45,8 @@ class PostInfo extends Component{
                 </div>
                 <section className={'post-comment'}>
                     <form>
-                        <textarea id={'comment-input'} placeholder="添加评论..."></textarea>
+                        <textarea postID={id} onKeyPress={(event) => this.addComment(event)} id={'comment-input'}
+                                  placeholder="添加评论..."></textarea>
                     </form>
                 </section>
             </div>
@@ -53,6 +60,17 @@ class PostInfo extends Component{
     drawBookmark(bookmarked){
         return bookmarked?{__html: '&#xe60e;'}:{__html: '&#xef47;'}
     }
+
+    addComment(event) {
+        if (event.which === 13) {
+            const id = parseInt(event.target.getAttribute('postID'), 10);
+            this.props.newComment(id, event.target.value);
+            event.target.value = "";
+
+        }
+    }
+
+
 }
 
 
@@ -75,6 +93,9 @@ const mapDispatchToProps = (dispatch) => {
         toggleBookmark(id){
             dispatch(actionCreators.toggleBookmark(id));
         },
+        newComment(id, comment) {
+            dispatch(actionCreators.addComment(id, comment));
+        }
     }
 };
 

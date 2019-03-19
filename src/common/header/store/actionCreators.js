@@ -69,3 +69,11 @@ export const fetchGallery = (endpoint)=>{
         )
     }
 };
+
+export const addComment = (id, comment) => {
+    return {
+        type: constants.ADD_COMMENT,
+        id,
+        comment,
+    }
+}

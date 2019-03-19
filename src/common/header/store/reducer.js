@@ -1,12 +1,14 @@
 import * as constants from './constants'
 import * as immutable from 'immutable';
+import {fromJS} from "immutable";
 const defaultState = immutable.fromJS({
     zoomImage: '',
     showImage: false,
     timeline: new Map(),
     gallery: new Map(),
     currentDisplay: -1,
-    picID: []
+    picID: [],
+    username: 'instagram'
 });
 
 export default (state = defaultState, action) => {
@@ -61,6 +63,17 @@ export default (state = defaultState, action) => {
             return state.set(
                 'currentDisplay', action.idx
             );
+        case constants.ADD_COMMENT:
+            let newComments = [...state.getIn(['timeline', action.id, 'comments'])];
+
+            newComments.push(
+                {
+                    author: state.get('username'),
+                    comment: action.comment,
+                }
+            );
+            return state.setIn(['timeline', action.id, 'comments'],
+                newComments);
         default:
             return state;
     }
