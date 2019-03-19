@@ -15,16 +15,16 @@ class Post extends Component{
         const {timeline} = this.props;
         const timelineArray = [...timeline.values()]
         return (
-                <article className={'wrapper'}>
+                <article className={'post-wrapper'}>
                     {
                         timelineArray.map((item, idx)=>{
                             return(
-                                <div>
-                                    <PostHeader username={item.author} location={item.location} icon={item.authorIcon}/>
+                                <div className={'post-content'}>
+                                    <PostHeader id={item.id}/>
                                     <div post-id={item.id} className={'post-img'}>
                                         <a><img src={item.imgUrl}/></a>
                                     </div>
-                                    <PostInfo id={item.id} likes={item.likes} date={item.date} bookmarked={item.bookmarked} comments={item.comments}/>
+                                    <PostInfo id={item.id} />
                                 </div>
                             )
                         })
