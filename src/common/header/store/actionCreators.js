@@ -90,3 +90,16 @@ export const loadUser = () => {
         )
     }
 };
+
+export const loadUserProfile = () => {
+    return (dispatch, getState) => {
+        axios.get('/api/profile.json').then((resp) => {
+                let data = resp.data.data;
+                dispatch({
+                    type: constants.LOAD_USER_PROFILE,
+                    data,
+                });
+            }
+        )
+    }
+};

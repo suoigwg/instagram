@@ -9,7 +9,8 @@ const defaultState = immutable.fromJS({
     currentDisplay: -1,
     picID: [],
     users: [],
-    username: 'instagram'
+    username: 'instagram',
+    profile: {}
 });
 
 export default (state = defaultState, action) => {
@@ -76,6 +77,8 @@ export default (state = defaultState, action) => {
                 newComments);
         case constants.LOAD_USERS:
             return state.set('users', action.data);
+        case constants.LOAD_USER_PROFILE:
+            return state.set('profile', action.data);
         default:
             return state;
     }

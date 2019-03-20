@@ -5,33 +5,42 @@ import {connect} from "react-redux";
 class UserProfile extends Component{
 
     render() {
+        const {profile} = this.props;
         return (
             <div >
                 <div className={'profile-wrapper'}>
                     <div>
-                        <a><img src={'https://scontent-hkg3-1.cdninstagram.com/vp/74698f6ed704f2867b202f9620145212/5D0BA7E1/t51.2885-19/s150x150/53725741_2240872962846483_3598845366100819968_n.jpg?_nc_ht=scontent-hkg3-1.cdninstagram.com'}></img></a>
+                        <a><img src={profile.icon}></img></a>
                     </div>
                     <div className={'user-text'}>
                         <div>
-                            <div className={'id'}><a>{this.props.username}</a></div>
+                            <div className={'id'}><a>{profile.username}</a></div>
                         </div>
-                        <div className={'nickname'}>ig</div>
+                        <div className={'nickname'}>{profile.nickname}</div>
                     </div>
                 </div>
             </div>
         );
     }
 
+    componentDidMount() {
+        this.props.loadProfile();
+    }
 }
 
 const mapStateToProps = (state /*, ownProps*/) => {
     return {
-        username: state.get('username')
+        username: state.get('username'),
+        profile: state.get('profile')
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {}
+    return {
+        loadProfile() {
+            dispatch(actionCreators.loadUserProfile());
+        }
+    }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserProfile);

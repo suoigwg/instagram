@@ -7,3 +7,4 @@ export const FETCH_GALLERY = 'FETCH_GALLERY';
 export const SET_CURRENT_IMG = 'SET_CURRENT_IMG';
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const LOAD_USERS = 'LOAD_USERS';
+export const LOAD_USER_PROFILE = 'LOAD_USER_PROFILE';

@@ -9,8 +9,9 @@ import Discover from './pages/discover'
 import Login from './pages/login'
 import Profile from './pages/profile';
 import {BrowserRouter, Route} from "react-router-dom";
-import {Provider} from 'react-redux';
+import {connect, Provider} from 'react-redux';
 import store from "./common/header/store/store";
+import {actionCreators} from "./common/header/store";
 
 class App extends Component {
   render() {
@@ -35,6 +36,8 @@ class App extends Component {
 
     );
   }
+
 }
+
 
 export default App;
