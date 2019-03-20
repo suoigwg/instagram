@@ -1,3 +1,13 @@
+## Screenshots
+
+![首页](https://github.com/suoigwg/instagram/raw/master/images/Screen%20Shot%202019-03-20%20at%2010.35.24%20AM.png)
+
+![发现](https://github.com/suoigwg/instagram/blob/master/images/Screen%20Shot%202019-03-20%20at%2010.35.35%20AM.png?raw=true)
+
+![用户](https://github.com/suoigwg/instagram/blob/master/images/Screen%20Shot%202019-03-20%20at%2010.35.45%20AM.png?raw=true)
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
