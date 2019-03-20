@@ -3,10 +3,9 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './common/header/js/header';
 import UserList from './common/header/js/suggested-users';
-import Home from './common/header/js/home';
+import Home from './pages/home';
 import Picture from './common/header/js/picture';
 import Discover from './pages/discover'
-import Login from './pages/login'
 import Profile from './pages/profile';
 import {BrowserRouter, Route} from "react-router-dom";
 import {connect, Provider} from 'react-redux';
@@ -26,7 +25,6 @@ class App extends Component {
                             <Route path='/' exact component={Home}/>
                             <Route path='/discover' exact component={Discover}/>
                             <Route path='/user/:id' exact component={Profile}/>
-                            <Route path='/debug' exact component={Login}/>
 
                         </div>
                     </div>
