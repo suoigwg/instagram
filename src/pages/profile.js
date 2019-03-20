@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './profile.scss'
-import Gallery from '../common/header/js/gallery'
-import * as actionCreators from "../common/header/store/actionCreators";
+import Gallery from '../common/components/js/gallery'
+import * as actionCreators from "../common/components/store/actionCreators";
 import {connect} from "react-redux";
 
 class Profile extends Component {

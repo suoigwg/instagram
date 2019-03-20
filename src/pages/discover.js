@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './discover.scss'
-import Gallery from '../common/header/js/gallery'
-import UserList from '../common/header/js/suggested-users';
+import Gallery from '../common/components/js/gallery'
+import UserList from '../common/components/js/suggested-users';
 import {connect} from "react-redux";
 
 class Discover extends Component{
