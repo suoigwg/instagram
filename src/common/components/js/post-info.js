@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import * as actionCreators from "../store/actionCreators";
 import {connect} from "react-redux";
 
@@ -45,7 +45,7 @@ class PostInfo extends Component{
                 </div>
                 <section className={'post-comment'}>
                     <form>
-                        <textarea postID={id} onKeyPress={(event) => this.addComment(event)} id={'comment-input'}
+                        <textarea onKeyPress={(event) => this.addComment(event)} id={'comment-input'}
                                   placeholder="添加评论..."></textarea>
                     </form>
                 </section>

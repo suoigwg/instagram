@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import '../css/recommend.scss';
 import * as actionCreators from "../store/actionCreators";
 import {connect} from "react-redux";
@@ -15,9 +15,9 @@ class Recommend extends Component{
                 </div>
                 <div className={'recommend-user'}>
                     {
-                        users.map((item) => {
+                        users.map((item, idx) => {
                             return (
-                                <div className={'rec-user-wrapper'}>
+                                <div className={'rec-user-wrapper'} key={idx}>
                                     <div style={{flex: '1 0 0'}}>
                                         <a className={'pic-wrapper'}>
                                             <img src={item.icon}/>

@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import {Link} from "react-router-dom";
+import React, {Component} from 'react';
 import '../css/picture.scss'
 import PostInfo from './post-info';
 import PostHeader from './post-header';
 import * as actionCreators from "../store/actionCreators";
 import {connect} from "react-redux";
+
 class Picture extends Component{
 
     constructor(props) {
